@@ -1,0 +1,85 @@
+body {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Exercise 1: Basic Grid Layout */
+.g1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.g1 > div {
+    background-color: lightgray;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Exercise 2: Variable Grid Layout with Numbers */
+.g2 {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: 50px minmax(75px, 1fr) 50px minmax(75px, 1fr);
+    grid-gap: 15px;
+    width: fit-content;
+}
+
+.g2 > div {
+    background-color: lightcoral;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Exercise 3: Layout with Nested Grids */
+.g3 {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 60px 1fr 60px;
+    height: 400px;
+    grid-gap: 10px;
+}
+
+.g3 > header {
+    grid-column: 1 / span 3;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 60px;
+}
+
+.g3 > aside {
+    grid-column: 1 / span 1;
+    background-color: lightcoral;
+    padding: 10px;
+}
+
+.g3 > main {
+    grid-column: 2 / span 1;
+    background-color: lightyellow;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    row-gap: 10px;
+}
+
+.g3 > main > div {
+    padding: 10px;
+}
+
+.g3 > footer {
+    grid-column: 1 / span 3;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 60px;
+}
+
+.g3 .articles {
+    background-color: lightgreen;
+}
